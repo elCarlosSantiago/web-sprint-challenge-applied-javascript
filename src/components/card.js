@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Card = (article) => {
   //Instantiate the elements
   const cardDiv = document.createElement("div");
@@ -45,6 +47,40 @@ const Card = (article) => {
 };
 
 const cardAppender = (selector) => {
+  axios
+    .get("https://lambda-times-api.herokuapp.com/articles")
+    .then((res) => {
+      const artObj = res.data.articles;
+      const bootArr = artObj.bootstrap;
+      const jsArr = artObj.javascript;
+      const jqueryArr = artObj.jquery;
+      const nodeArr = artObj.node;
+      const techArr = artObj.technology;
+      jsArr.forEach((item) => {
+        let cardyCard = Card(item);
+        document.querySelector(selector).appendChild(cardyCard);
+      });
+      bootArr.forEach((item) => {
+        let cardyCard = Card(item);
+        document.querySelector(selector).appendChild(cardyCard);
+      });
+      techArr.forEach((item) => {
+        let cardyCard = Card(item);
+        document.querySelector(selector).appendChild(cardyCard);
+      });
+      jqueryArr.forEach((item) => {
+        let cardyCard = Card(item);
+        document.querySelector(selector).appendChild(cardyCard);
+      });
+      nodeArr.forEach((item) => {
+        let cardyCard = Card(item);
+        document.querySelector(selector).appendChild(cardyCard);
+      });
+    })
+    .catch((err) => {
+      debugger;
+    });
+
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
