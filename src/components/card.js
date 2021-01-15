@@ -1,4 +1,5 @@
 import axios from "axios";
+import { tabsAppender } from "./tabs";
 
 const Card = (article) => {
   //Instantiate the elements

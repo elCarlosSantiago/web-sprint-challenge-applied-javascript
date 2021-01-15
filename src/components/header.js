@@ -3,7 +3,7 @@ const Header = (title, date, temp) => {
    const headerDiv = document.createElement('div');
    const dateSpan = document.createElement('span');
    const titleH1 = document.createElement('h1');
-   const tempSpan = document.createElement('h1');
+   const tempSpan = document.createElement('span');
 
    //Set class names, attributes, & text
    headerDiv.classList.add('header');
