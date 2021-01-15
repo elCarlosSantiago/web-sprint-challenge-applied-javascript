@@ -9,7 +9,7 @@ const Card = (article) => {
   const imgAuthor = document.createElement("img");
   const authorSpan = document.createElement("span");
 
-  //Set Class names, attributes, & text
+  //Set Class names, attributes, & text 
   cardDiv.classList.add("card");
   headlineDiv.classList.add("headline");
   headlineDiv.textContent = article.headline;
