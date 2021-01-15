@@ -1,4 +1,24 @@
 const Header = (title, date, temp) => {
+   //Instantiate the elements
+   const headerDiv = document.createElement('div');
+   const dateSpan = document.createElement('span');
+   const titleH1 = document.createElement('h1');
+   const tempSpan = document.createElement('h1');
+
+   //Set class names, attributes, & text
+   headerDiv.classList.add('header');
+   dateSpan.classList.add('date');
+   dateSpan.textContent = date;
+   titleH1.textContent = title;
+   tempSpan.classList.add('temp');
+   tempSpan.textContent = temp;
+
+   //Create hierarchy
+   headerDiv.appendChild(dateSpan);
+   headerDiv.appendChild(titleH1);
+   headerDiv.appendChild(tempSpan);
+
+   return headerDiv;
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -14,6 +34,9 @@ const Header = (title, date, temp) => {
 }
 
 const headerAppender = (selector) => {
+  const newHeader = Header ('Lambda Times', 'January 15th, 2021', '26°');
+  document.querySelector(selector).appendChild(newHeader);
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.

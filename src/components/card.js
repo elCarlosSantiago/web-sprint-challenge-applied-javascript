@@ -1,4 +1,29 @@
 const Card = (article) => {
+  //Instantiate the elements
+  const cardDiv = document.createElement("div");
+  const headlineDiv = document.createElement("div");
+  const authorDiv = document.createElement("div");
+  const imgContDiv = document.createElement("div");
+  const imgAuthor = document.createElement("img");
+  const authorSpan = document.createElement("span");
+
+  //Set Class names, attributes, & text
+  cardDiv.classList.add("card");
+  headlineDiv.classList.add("headline");
+  headlineDiv.textContent = article.headline;
+  authorDiv.classList.add("author");
+  imgContDiv.classList.add("img-container");
+  imgAuthor.src = article.authorPhoto;
+  authorSpan.textContent = `By: ${article.authorName}`;
+
+  // create hierarchy
+  cardDiv.appendChild(headlineDiv);
+  cardDiv.appendChild(authorDiv);
+  authorDiv.appendChild(imgContDiv);
+  imgContDiv.appendChild(imgAuthor);
+  authorDiv.appendChild(authorSpan);
+
+  return cardDiv;
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,7 +42,7 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+};
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -28,6 +53,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+};
 
-export { Card, cardAppender }
+export { Card, cardAppender };
