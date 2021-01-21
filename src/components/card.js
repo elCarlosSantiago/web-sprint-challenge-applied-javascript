@@ -83,7 +83,7 @@ const cardAppender = (selector) => {
       });
     })
     .catch((err) => {
-      debugger;
+      console.log(err.message)
     });
 
   // TASK 6
